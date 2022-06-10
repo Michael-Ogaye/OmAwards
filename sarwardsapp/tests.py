@@ -5,7 +5,7 @@ from .models import *
 
 class TestProfile(TestCase):
     def setUp(self):
-        self.user = User(id=1, username='charles', password='wer2345uyq')
+        self.user = User(id=1, username='ogaye', password='utreeffsw')
         self.user.save()
 
     def test_instance(self):
@@ -20,8 +20,8 @@ class TestProfile(TestCase):
 
 class PostTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create(id=1, username='charles')
-        self.post = Post.objects.create(id=1, title='test post', photo='https://ucarecdn.com/0ccf61ff-508e-46c6-b713-db51daa6626e', description='desc',
+        self.user = User.objects.create(id=1, username='ogaye')
+        self.post = Post.objects.create(id=1, title='test post', photo='https//jo.com/0ccf61ff-508e-46c6-b713-db51daa6626e', description='desc',
                                         user=self.user, url='http://ur.coml')
 
     def test_instance(self):
@@ -50,8 +50,8 @@ class PostTest(TestCase):
 
 class RatingTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create(id=1, username='charles')
-        self.post = Post.objects.create(id=1, title='test post', photo='https://ucarecdn.com/0ccf61ff-508e-46c6-b713-db51daa6626e', description='desc',
+        self.user = User.objects.create(id=1, username='michael')
+        self.post = Post.objects.create(id=1, title='testing', photo='https:/xyxz.com/0ccf61ff-508e-46c6-b713-db51daa6626e', description='powerful',
                                         user=self.user, url='http://ur.coml')
         self.rating = Rating.objects.create(id=1, design=6, usability=7, content=9, user=self.user, post=self.post)
 
