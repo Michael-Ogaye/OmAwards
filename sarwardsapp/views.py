@@ -49,7 +49,7 @@ def signup(request):
 
 @login_required(login_url='login')
 def profile(request, username):
-    return render(request, 'profile.html')
+    return render(request, 'sarwardsapp/profile.html')
 
 
 def user_profile(request, username):
@@ -59,7 +59,7 @@ def user_profile(request, username):
     params = {
         'user_prof': user_prof,
     }
-    return render(request, 'userprofile.html', params)
+    return render(request, 'sarwardsapp/userprofile.html', params)
 
 
 @login_required(login_url='login')
@@ -75,11 +75,11 @@ def edit_profile(request, username):
     else:
         user_form = UpdateUserForm(instance=request.user)
         prof_form = UpdateUserProfileForm(instance=request.user.profile)
-    params = {
+    context = {
         'user_form': user_form,
         'prof_form': prof_form
     }
-    return render(request, 'edit.html', params)
+    return render(request, 'sarwardsapp/update_profile.html', context)
 
 
 @login_required(login_url='login')
@@ -125,7 +125,7 @@ def project(request, post):
         'rating_status': rating_status
 
     }
-    return render(request, 'project.html', params)
+    return render(request, 'sarwardsapp/project.html', params)
 
 
 def search_project(request):
