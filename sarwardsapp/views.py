@@ -12,7 +12,7 @@ import random
 
 def home(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST,request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
@@ -84,7 +84,7 @@ def edit_profile(request, username):
 
 @login_required(login_url='login')
 def project(request, post):
-    post = Post.objects.get(title=post)
+    post = Post.objects.filter(title=post).first()
     ratings = Rating.objects.filter(user=request.user, post=post).first()
     rating_status = None
     if ratings is None:
