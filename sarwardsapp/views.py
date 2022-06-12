@@ -138,10 +138,10 @@ def search_project(request):
             'results': results,
             'message': message
         }
-        return render(request, 'results.html', params)
+        return render(request, 'sarwardsapp/results.html', params)
     else:
         message = "You haven't searched for any image category"
-    return render(request, 'results.html', {'message': message})
+    return render(request, 'sarwardsapp/results.html', {'message': message})
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()

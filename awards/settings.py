@@ -176,3 +176,6 @@ EMAIL_PORT=config('EMAIL_PORT',cast=int)
 django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGOUT_REDIRECT_URL='/'
+LOGIN_REDIRECT_URL='/'
+
